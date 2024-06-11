@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Diver - Data Extractor</title>
+</head>
+<body>
+<!-- Site Header starts here -->
+
+
+
+<header>
+  <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+      <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          <a href="home.html" class="flex items-center">
+              <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Data Diver Logo" />
+              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Data Diver</span>
+          </a>
+          <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+              <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                  <li>
+                      <a href="home.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+                  </li>
+                  <li>
+                      <a href="extractor.html" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Data Extractor</a>
+                  </li>
+                  <li>
+                      <a href="dashboard.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Dashboard</a>
+                  </li>
+                  <li>
+                      <a href="contact.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+
+
+
+
+
+
+<!-- Modal toggle -->
+<div class="flex justify-center m-5">
+    <button id="successButton" data-modal-target="successModal" data-modal-toggle="successModal" class="block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="button">
+    Show success message
+    </button>
+</div>
+
+<!-- Main modal -->
+<div id="successModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+            <button type="button" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="successModal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 p-2 flex items-center justify-center mx-auto mb-3.5">
+                <svg aria-hidden="true" class="w-8 h-8 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Success</span>
+            </div>
+            <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Successfully removed product.</p>
+            <button data-modal-toggle="successModal" type="button" class="py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
+                Continue
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- component -->
+<div class="bg-gray-500 h-screen w-screen sm:px-8 md:px-16 sm:py-8">
+    <main class="container mx-auto max-w-screen-lg h-full">
+      <!-- file upload modal -->
+      <article aria-label="File Upload Modal" class="relative h-full flex flex-col bg-white shadow-xl rounded-md" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);" ondragenter="dragEnterHandler(event);">
+        <!-- overlay -->
+        <div id="overlay" class="w-full h-full absolute top-0 left-0 pointer-events-none z-50 flex flex-col items-center justify-center rounded-md">
+          <i>
+            <svg class="fill-current w-12 h-12 mb-3 text-blue-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479-1.092l4 4h-3v4h-2v-4h-3l4-4z" />
+            </svg>
+          </i>
+          <p class="text-lg text-blue-700">Drop files to upload</p>
+        </div>
+
+        <!-- scroll area -->
+        <section class="h-full overflow-auto p-8 w-full h-full flex flex-col">
+          <header class="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
+            <p class="mb-3 font-semibold text-gray-900 flex flex-wrap justify-center">
+              <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
+            </p>
+            <input id="hidden-input" type="file" multiple class="hidden" />
+            <button id="button" class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+              Upload a file
+            </button>
+          </header>
+
+          <h1 class="pt-8 pb-3 font-semibold sm:text-lg text-gray-900">
+            To Upload
+          </h1>
+
+          <ul id="gallery" class="flex flex-1 flex-wrap -m-1">
+            <li id="empty" class="h-full w-full text-center flex flex-col items-center justify-center items-center">
+              <img class="mx-auto w-32" src="https://user-images.githubusercontent.com/507615/54591670-ac0a0180-4a65-11e9-846c-e55ffce0fe7b.png" alt="no data" />
+              <span class="text-small text-gray-500">No files selected</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- sticky footer -->
+        <footer class="flex justify-end px-8 pb-8 pt-4">
+          <button id="submit" class="rounded-sm px-3 py-1 bg-blue-700 hover:bg-blue-500 text-white focus:shadow-outline focus:outline-none">
+            Upload now
+          </button>
+          <button id="cancel" class="ml-3 rounded-sm px-3 py-1 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+            Cancel
+          </button>
+        </footer>
+      </article>
+    </main>
+  </div>
+
+  <!-- using two similar templates for simplicity in js code -->
+  <template id="file-template">
+    <li class="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
+      <article tabindex="0" class="group w-full h-full rounded-md focus:outline-none focus:shadow-outline elative bg-gray-100 cursor-pointer relative shadow-sm">
+        <img alt="upload preview" class="img-preview hidden w-full h-full sticky object-cover rounded-md bg-fixed" />
+
+        <section class="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
+          <h1 class="flex-1 group-hover:text-blue-800"></h1>
+          <div class="flex">
+            <span class="p-1 text-blue-800">
+              <i>
+                <svg class="fill-current w-4 h-4 ml-auto pt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M15 2v5h5v15h-16v-20h11zm1-2h-14v24h20v-18l-6-6z" />
+                </svg>
+              </i>
+            </span>
+            <p class="p-1 size text-xs text-gray-700"></p>
+            <button class="delete ml-auto focus:outline-none hover:bg-gray-300 p-1 rounded-md text-gray-800">
+              <svg class="pointer-events-none fill-current w-4 h-4 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path class="pointer-events-none" d="M3 6l3 18h12l3-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.316c0 .901.73 2 1.631 2h5.711z" />
+              </svg>
+            </button>
+          </div>
+        </section>
+      </article>
+    </li>
+  </template>
+
+  <template id="image-template">
+    <li class="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
+      <article tabindex="0" class="group hasImage w-full h-full rounded-md focus:outline-none focus:shadow-outline bg-gray-100 cursor-pointer relative text-transparent hover:text-white shadow-sm">
+        <img alt="upload preview" class="img-preview w-full h-full sticky object-cover rounded-md bg-fixed" />
+
+        <section class="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
+          <h1 class="flex-1"></h1>
+          <div class="flex">
+            <span class="p-1">
+              <i>
+                <svg class="fill-current w-4 h-4 ml-auto pt-" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M5 8.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5zm9 .5l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm8-4v14h-20v-14h20zm2-2h-24v18h24v-18z" />
+                </svg>
+              </i>
+            </span>
+
+            <p class="p-1 size text-xs"></p>
+            <button class="delete ml-auto focus:outline-none hover:bg-gray-300 p-1 rounded-md">
+              <svg class="pointer-events-none fill-current w-4 h-4 ml-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path class="pointer-events-none" d="M3 6l3 18h12l3-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.316c0 .901.73 2 1.631 2h5.711z" />
+              </svg>
+            </button>
+          </div>
+        </section>
+      </article>
+    </li>
+  </template>
+
+<script>
+const fileTempl = document.getElementById("file-template"),
+imageTempl = document.getElementById("image-template"),
+empty = document.getElementById("empty");
+
+// use to store pre selected files
+let FILES = {};
+
+// check if file is of type image and prepend the initialied
+// template to the target element
+function addFile(target, file) {
+const isImage = file.type.match("image.*"),
+  objectURL = URL.createObjectURL(file);
+
+const clone = isImage
+  ? imageTempl.content.cloneNode(true)
+  : fileTempl.content.cloneNode(true);
+
+clone.querySelector("h1").textContent = file.name;
+clone.querySelector("li").id = objectURL;
+clone.querySelector(".delete").dataset.target = objectURL;
+clone.querySelector(".size").textContent =
+  file.size > 1024
+    ? file.size > 1048576
+      ? Math.round(file.size / 1048576) + "mb"
+      : Math.round(file.size / 1024) + "kb"
+    : file.size + "b";
+
+isImage &&
+  Object.assign(clone.querySelector("img"), {
+    src: objectURL,
+    alt: file.name
+  });
+
+empty.classList.add("hidden");
+target.prepend(clone);
+
+FILES[objectURL] = file;
+}
+
+const gallery = document.getElementById("gallery"),
+overlay = document.getElementById("overlay");
+
+// click the hidden input of type file if the visible button is clicked
+// and capture the selected files
+const hidden = document.getElementById("hidden-input");
+document.getElementById("button").onclick = () => hidden.click();
+hidden.onchange = (e) => {
+for (const file of e.target.files) {
+  addFile(gallery, file);
+}
+};
+
+// use to check if a file is being dragged
+const hasFiles = ({ dataTransfer: { types = [] } }) =>
+types.indexOf("Files") > -1;
+
+// use to drag dragenter and dragleave events.
+// this is to know if the outermost parent is dragged over
+// without issues due to drag events on its children
+let counter = 0;
+
+// reset counter and append file to gallery when file is dropped
+function dropHandler(ev) {
+ev.preventDefault();
+for (const file of ev.dataTransfer.files) {
+  addFile(gallery, file);
+  overlay.classList.remove("draggedover");
+  counter = 0;
+}
+}
+
+// only react to actual files being dragged
+function dragEnterHandler(e) {
+e.preventDefault();
+if (!hasFiles(e)) {
+  return;
+}
+++counter && overlay.classList.add("draggedover");
+}
+
+function dragLeaveHandler(e) {
+1 > --counter && overlay.classList.remove("draggedover");
+}
+
+function dragOverHandler(e) {
+if (hasFiles(e)) {
+  e.preventDefault();
+}
+}
+
+// event delegation to caputre delete events
+// fron the waste buckets in the file preview cards
+gallery.onclick = ({ target }) => {
+if (target.classList.contains("delete")) {
+  const ou = target.dataset.target;
+  document.getElementById(ou).remove(ou);
+  gallery.children.length === 1 && empty.classList.remove("hidden");
+  delete FILES[ou];
+}
+};
+
+// print all selected files
+document.getElementById("submit").onclick = () => {
+alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
+console.log(FILES);
+};
+
+// clear entire selection
+document.getElementById("cancel").onclick = () => {
+while (gallery.children.length > 0) {
+  gallery.lastChild.remove();
+}
+FILES = {};
+empty.classList.remove("hidden");
+gallery.append(empty);
+};
+
+</script>
+
+<style>
+.hasImage:hover section {
+background-color: rgba(5, 5, 5, 0.4);
+}
+.hasImage:hover button:hover {
+background: rgba(5, 5, 5, 0.45);
+}
+
+#overlay p,
+i {
+opacity: 0;
+}
+
+#overlay.draggedover {
+background-color: rgba(255, 255, 255, 0.7);
+}
+#overlay.draggedover p,
+#overlay.draggedover i {
+opacity: 1;
+}
+
+.group:hover .group-hover\:text-blue-800 {
+color: #2b6cb0;
+}
+</style>
+
+
+
+
+    <!-- Footer Starts here -->
+
+    
+    <div class="bg-black p-4 items-center">
+      <div class="flex justify-center pt-10 pb-14 md:pb-9"> <img class="w-2/5 md:w-[25%] lg:w-[18%] xl:w-[15%]"
+              src="images/cucet-footer-logo.png" alt="" srcset="" /> </div>
+      <div class="space-y-9 grid grid-cols-1 md:grid-cols-2 md:pl-24 md:pr-16 lg:grid-cols-4 lg:px-7 xl:px-14 xl:ml-16">
+          <div class="text-[#6d6d6d] font-[650] text-[16px] leading-7">
+              <div class="flex justify-start md:mt-10">
+                  <h1
+                      class="text-white pb-[36px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                      Inform </h1> <span class="text-white font-sans uppercase font-normal tracking-wider">ation</span>
+              </div>
+              <p>Registration Start Date</p>
+              <p>Registration End Date</p>
+              <p>Exam Last Date </p>
+          </div>
+          <div class="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide md:">
+              <div>
+                  <pre
+                      class="text-white pb-[34px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90"> dates &nbsp;</pre>
+              </div>
+              <p>23 Dec 2024</p>
+              <p>30 May 2024</p>
+              <p>23 Dec 2024 to 31 May 2024</p>
+          </div>
+          <div class="md:flex flex-col justify-between">
+              <div class="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide">
+                  <div class="flex justify-start">
+                      <h1
+                          class="text-white pb-[34px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                          Exclusive &#160 </h1> <span class="text-white font-sans uppercase font-normal tracking-wider"> Pages</span>
+                  </div>
+                  <p class=""> <a class="hover:text-[#cacaca]" href="index.html">Home</a> </p>
+                  <p class=""> <a class="hover:text-[#cacaca]" href="extractor.html">Data Extractor</a> </p>
+                  <p class=""> <a class="hover:text-[#cacaca]" href="dashboard.html">Dashboard</a> </p>
+                  <p class=""> <a class="hover:text-[#cacaca]" href="contact.html">Contact Us</a> </p>
+              </div>
+              <div
+                  class="text-[#747474] text-[15px] font-[550] leading-6 tracking-wide mt-9 md:order-5 md:pt-32 lg:pb-28">
+                  <div class="flex justify-start md:-mt-32">
+                      <h1
+                          class="text-white pb-[38px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                          suppor </h1> <span class="text-white font-sans uppercase font-normal tracking-wider">t</span>
+                  </div>
+                  <p class=""> <a href="contact.html" class="hover:text-[#cacaca]">Contact</a> </p>
+              </div>
+          </div>
+          <div class="text-[#797878] text-[15px] font-[550] leading-6 tracking-wide md:order-4 lg:">
+              <div class="flex justify-start">
+                  <h1
+                      class="text-white pb-[38px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                      get in t </h1> <span class="text-white font-sans uppercase font-normal tracking-wider">ouch</span>
+              </div>
+              <p class="space-x-3"> <i class="fa fa-home text-[17px]"></i><strong
+                      class="text-[#8b8b8b] text-[15px] tracking-wide">Data Diver</strong> </p>
+              <div class="leading-7">
+                  <p class=""> Street 5-b, Lane 10, <br /> Meherban Colony, Islamabad <br /> General Helpline
+                      No:+923257642104 </p>
+              </div>
+              <div class="leading-7 mt-4 text-[15px] font-[500]">
+                  <p class="space-x-3 hover:text-[#cacaca]"> <i class="fa fa-phone text-[17px]"></i> <a href="#"> +923195832603</a> </p>
+                  <p class="space-x-3 hover:text-[#cacaca]"> <i class="fa fa-phone text-[17px]"></i> <a
+                          href="#">+923446062985 ( <span class="text-[13px] font-[500]">General Enquiry</span> )</a> </p>
+                  <p class="space-x-3 hover:text-[#cacaca]"> <i class="fa fa-envelope text-[16px]"></i> <a href="#">
+                          Zeeshan@Shadowlancers.com</a> </p>
+              </div>
+          </div>
+      </div>
+      <div class="divide-y divide-[#747474] contrast-200 mt-3 mb-3 md:-mt-4 md:-mb-2 lg:-mt-16 xl:-mt-24">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+      </div>
+      <div class="flex justify-center mb-4 md:mb-1 text-[#afafaf] text-center text-xl space-x-3">
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[7px]"><i
+                      class="fa fa-facebook"></i></a> </p>
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                      class="fa fa-twitter"></i></a> </p>
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                      class="fa fa-instagram"></i></a> </p>
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                      class="fa fa-linkedin"></i></a> </p>
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                      class="fa fa-youtube"></i></a> </p>
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                      class="fa fa-pinterest"></i></a> </p>
+          <p> <a href="#"
+                  class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                      class="fa fa-telegram"></i></a> </p>
+      </div>
+      </div>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://use.fontawesome.com/03f8a0ebd4.js"></script>
+
+</body>
+</html>

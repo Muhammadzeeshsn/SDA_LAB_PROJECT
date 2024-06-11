@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Diver - Signup</title>
+    <SCRIPT type="module" src="REGISTER.JS" defer></SCRIPT>
+</head>
+<body>
+<!-- Site Header starts here -->
+<header>
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="index.html" class="flex items-center">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Data Diver Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Data Diver</span>
+            </a>
+            <div class="flex items-center lg:order-2">
+                <a href="login.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Log in</a>
+                <a href="signup.html" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Get started</a>
+                <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                    <li>
+                        <a href="index.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Data Extractor</a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="contact1.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+
+
+<!-- Sign Up block strats here -->
+
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+            DataDiver    
+        </a>
+        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    Create an account
+                </h1>
+                <form class="space-y-4 md:space-y-6" action="#">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                    </div>
+                    <div>
+                        <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+                        <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                          <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                        </div>
+                        <div class="ml-3 text-sm">
+                          <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" id="submit">Create an account</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Already have an account? <a href="login.html" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+
+    <!-- Footer Starts here -->
+
+   
+    <div class="bg-black p-4 items-center">
+        <div class="flex justify-center pt-10 pb-14 md:pb-9"> <img class="w-2/5 md:w-[25%] lg:w-[18%] xl:w-[15%]"
+                src="images/cucet-footer-logo.png" alt="" srcset="" /> </div>
+        <div class="space-y-9 grid grid-cols-1 md:grid-cols-2 md:pl-24 md:pr-16 lg:grid-cols-4 lg:px-7 xl:px-14 xl:ml-16">
+            <div class="text-[#6d6d6d] font-[650] text-[16px] leading-7">
+                <div class="flex justify-start md:mt-10">
+                    <h1
+                        class="text-white pb-[36px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                        Inform </h1> <span class="text-white font-sans uppercase font-normal tracking-wider">ation</span>
+                </div>
+                <p>Registration Start Date</p>
+                <p>Registration End Date</p>
+                <p>Exam Last Date </p>
+            </div>
+            <div class="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide md:">
+                <div>
+                    <pre
+                        class="text-white pb-[34px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90"> dates &nbsp;</pre>
+                </div>
+                <p>23 Dec 2024</p>
+                <p>30 May 2024</p>
+                <p>23 Dec 2024 to 31 May 2024</p>
+            </div>
+            <div class="md:flex flex-col justify-between">
+                <div class="text-[#747474] text-[15px] font-[550] leading-7 tracking-wide">
+                    <div class="flex justify-start">
+                        <h1
+                            class="text-white pb-[34px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                            Exclusive &#160 </h1> <span class="text-white font-sans uppercase font-normal tracking-wider"> Pages</span>
+                    </div>
+                    <p class=""> <a class="hover:text-[#cacaca]" href="index.html">Home</a> </p>
+                    <p class=""> <a class="hover:text-[#cacaca]" href="extractor.html">Data Extractor</a> </p>
+                    <p class=""> <a class="hover:text-[#cacaca]" href="dashboard.html">Dashboard</a> </p>
+                    <p class=""> <a class="hover:text-[#cacaca]" href="contact.html">Contact Us</a> </p>
+                </div>
+                <div
+                    class="text-[#747474] text-[15px] font-[550] leading-6 tracking-wide mt-9 md:order-5 md:pt-32 lg:pb-28">
+                    <div class="flex justify-start md:-mt-32">
+                        <h1
+                            class="text-white pb-[38px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                            suppor </h1> <span class="text-white font-sans uppercase font-normal tracking-wider">t</span>
+                    </div>
+                    <p class=""> <a href="contact.html" class="hover:text-[#cacaca]">Contact</a> </p>
+                </div>
+            </div>
+            <div class="text-[#797878] text-[15px] font-[550] leading-6 tracking-wide md:order-4 lg:">
+                <div class="flex justify-start">
+                    <h1
+                        class="text-white pb-[38px] font-sans uppercase font-normal tracking-wider underline underline-offset-[12px] decoration-red-500/90">
+                        get in t </h1> <span class="text-white font-sans uppercase font-normal tracking-wider">ouch</span>
+                </div>
+                <p class="space-x-3"> <i class="fa fa-home text-[17px]"></i><strong
+                        class="text-[#8b8b8b] text-[15px] tracking-wide">Data Diver</strong> </p>
+                <div class="leading-7">
+                    <p class=""> Street 5-b, Lane 10, <br /> Meherban Colony, Islamabad <br /> General Helpline
+                        No:+923257642104 </p>
+                </div>
+                <div class="leading-7 mt-4 text-[15px] font-[500]">
+                    <p class="space-x-3 hover:text-[#cacaca]"> <i class="fa fa-phone text-[17px]"></i> <a href="#"> +923195832603</a> </p>
+                    <p class="space-x-3 hover:text-[#cacaca]"> <i class="fa fa-phone text-[17px]"></i> <a
+                            href="#">+923446062985 ( <span class="text-[13px] font-[500]">General Enquiry</span> )</a> </p>
+                    <p class="space-x-3 hover:text-[#cacaca]"> <i class="fa fa-envelope text-[16px]"></i> <a href="#">
+                            Zeeshan@Shadowlancers.com</a> </p>
+                </div>
+            </div>
+        </div>
+        <div class="divide-y divide-[#747474] contrast-200 mt-3 mb-3 md:-mt-4 md:-mb-2 lg:-mt-16 xl:-mt-24">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="flex justify-center mb-4 md:mb-1 text-[#afafaf] text-center text-xl space-x-3">
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[7px]"><i
+                        class="fa fa-facebook"></i></a> </p>
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                        class="fa fa-twitter"></i></a> </p>
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                        class="fa fa-instagram"></i></a> </p>
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                        class="fa fa-linkedin"></i></a> </p>
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                        class="fa fa-youtube"></i></a> </p>
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                        class="fa fa-pinterest"></i></a> </p>
+            <p> <a href="#"
+                    class="w-10 h-10 bg-[#474747] hover:text-blue-500 transform ease-in-out duration-500 hover:bg-white rounded-full inline-block pt-[6px]"><i
+                        class="fa fa-telegram"></i></a> </p>
+        </div>
+        </div>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://use.fontawesome.com/03f8a0ebd4.js"></script>
+
+    
+</body>
+</html>
